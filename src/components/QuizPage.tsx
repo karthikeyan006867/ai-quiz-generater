@@ -121,7 +121,7 @@ const QuizPage: React.FC<QuizPageProps> = ({
                 className={`nav-btn ${index === quizState.currentQuestionIndex ? 'active' : ''} ${
                   quizState.userAnswers[index] !== null ? 'answered' : ''
                 }`}
-                onClick={() => onGoToQuestion(index)}
+                onClick={() => { soundEffects.playNavigate(); onGoToQuestion(index); }}
               >
                 {index + 1}
               </button>

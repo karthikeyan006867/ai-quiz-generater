@@ -16,8 +16,12 @@ export const shuffleArray = <T>(array: T[]): T[] => {
  * Get random questions from the question bank
  */
 export const getRandomQuestions = (questions: Question[], count: number = 10): Question[] => {
+  if (questions.length === 0) {
+    return [];
+  }
   const shuffled = shuffleArray(questions);
-  return shuffled.slice(0, count);
+  const actualCount = Math.min(count, questions.length);
+  return shuffled.slice(0, actualCount);
 };
 
 /**

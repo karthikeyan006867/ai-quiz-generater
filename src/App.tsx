@@ -24,7 +24,18 @@ const App: React.FC = () => {
       filteredQuestions = filteredQuestions.filter(q => q.difficulty === difficulty);
     }
 
+    // Check if there are enough questions after filtering
+    if (filteredQuestions.length === 0) {
+      alert('No questions available for the selected criteria. Please try different filters.');
+      return;
+    }
+
     const selectedQuestions = getRandomQuestions(filteredQuestions, questionCount);
+
+    // Warn user if fewer questions are available than requested
+    if (selectedQuestions.length < questionCount) {
+      alert(`Only ${selectedQuestions.length} question(s) available for the selected criteria. Starting quiz with ${selectedQuestions.length} question(s).`);
+    }
 
     const newQuizState: QuizState = {
       questions: selectedQuestions,

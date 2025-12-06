@@ -27,7 +27,7 @@ const HomePage: React.FC<HomePageProps> = ({ onStartQuiz }) => {
     <div className="home-page">
       <div className="home-container">
         <header className="home-header">
-          <h1 className="title">🎯 AI Quiz Generator</h1>
+          <h1 className="title">🎯 AI Quiz Master</h1>
           <p className="subtitle">Test your knowledge with 200+ general questions!</p>
         </header>
 

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import QuizPage from './components/QuizPage';
 import ResultsPage from './components/ResultsPage';
-import { Question, QuizState } from './types';
+import { QuizState } from './types';
 import { questionBank } from './data/questions';
 import { getRandomQuestions } from './utils/quizHelper';
 import './App.css';
